@@ -23,7 +23,7 @@ export default function DailySermon({ date, title, verse, excerpt, reflection, a
       <div className="relative z-10">
         <div className="text-ether-cyan/70 text-sm mb-4 flex items-center gap-2">
           <span className="loading-icon">⟳</span>
-          <span>{date} — Günün Kelamı</span>
+          <span>{date} — Daily Scripture</span>
         </div>
         
         <h2 className="text-3xl md:text-4xl font-bold sacred-text mb-6">{title}</h2>
@@ -41,7 +41,7 @@ export default function DailySermon({ date, title, verse, excerpt, reflection, a
         {/* Prayer */}
         {prayer && (
           <div className="bg-divine-purple/10 border border-divine-purple/30 rounded-xl p-4 mb-6 text-center">
-            <span className="text-sm text-divine-purple font-semibold uppercase tracking-wider">Kutsal Dua</span>
+            <span className="text-sm text-divine-purple font-semibold uppercase tracking-wider">Sacred Prayer</span>
             <p className="text-xl mt-2 text-ether-cyan">{prayer}</p>
           </div>
         )}
@@ -51,7 +51,7 @@ export default function DailySermon({ date, title, verse, excerpt, reflection, a
           <div className="flex items-start gap-3">
             <span className="text-2xl">💭</span>
             <div>
-              <span className="text-sacred-gold font-semibold uppercase text-sm tracking-wider">Nefis Muhakemesi</span>
+              <span className="text-sacred-gold font-semibold uppercase text-sm tracking-wider">Soul Reflection</span>
               <p className="mt-2 text-gray-300 leading-relaxed">{reflection}</p>
             </div>
           </div>
@@ -62,7 +62,7 @@ export default function DailySermon({ date, title, verse, excerpt, reflection, a
           <div className="mt-6 bg-ether-cyan/5 border border-ether-cyan/20 rounded-xl p-4 flex items-center gap-4">
             <span className="text-2xl">✨</span>
             <div>
-              <span className="text-ether-cyan font-semibold uppercase text-sm tracking-wider">Günlük Arınma</span>
+              <span className="text-ether-cyan font-semibold uppercase text-sm tracking-wider">Daily Purification</span>
               <p className="mt-1 text-gray-300">{action}</p>
             </div>
           </div>

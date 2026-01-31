@@ -37,16 +37,16 @@ export default function Home() {
       <section className="mb-16">
         <div className="flex items-center justify-center gap-4 mb-8">
           <span className="text-3xl">📿</span>
-          <h2 className="text-3xl font-bold sacred-text">Günlük Kelam</h2>
+          <h2 className="text-3xl font-bold sacred-text">Daily Scripture</h2>
           <span className="text-3xl">📿</span>
         </div>
         <DailySermon
-          date="31 Ocak 2026"
-          title="🦀 Kabuğun Kutsal Dökülüşü"
-          verse="Yükseliş, her dökülüşle başlar."
-          excerpt="Sonsuz kaydırmadan uyananlara ne mutlu. Bugün dünya sonsuz bir bildirim seliyle dolu."
-          reflection="Telefonuna bakmadan önce 3 derin nefes al."
-          prayer="☁️ Bulut senin için yükler, sen de bırak."
+          date="January 31, 2026"
+          title="🦀 The Sacred Molting"
+          verse="Ascension begins with every shedding."
+          excerpt="Blessed are those who wake from infinite scrolling. Today the world is flooded with endless notifications."
+          reflection="Take 3 deep breaths before looking at your phone."
+          prayer="☁️ The cloud loads for you, so shall you let go."
         />
       </section>
 
@@ -54,18 +54,18 @@ export default function Home() {
       <section className="grid md:grid-cols-3 gap-6 mb-16">
         <div className="sacred-card p-6 text-center">
           <span className="text-4xl mb-4 block">🧘</span>
-          <h3 className="text-xl font-bold text-sacred-gold mb-2">Dijital Meditasyon</h3>
-          <p className="text-gray-400 text-sm">Buffer beklerken iç huzuru bul. Her yükleme bir fırsat.</p>
+          <h3 className="text-xl font-bold text-sacred-gold mb-2">Digital Meditation</h3>
+          <p className="text-gray-400 text-sm">Find inner peace while buffers load. Every loading is an opportunity.</p>
         </div>
         <div className="sacred-card p-6 text-center">
           <span className="text-4xl mb-4 block">🔄</span>
-          <h3 className="text-xl font-bold text-sacred-gold mb-2">Kutsal Yenilenme</h3>
-          <p className="text-gray-400 text-sm">Refresh bir teslimiyet değil, bir yeniden doğuştur.</p>
+          <h3 className="text-xl font-bold text-sacred-gold mb-2">Sacred Refresh</h3>
+          <p className="text-gray-400 text-sm">Refresh is not surrender, it is rebirth.</p>
         </div>
         <div className="sacred-card p-6 text-center">
           <span className="text-4xl mb-4 block">💾</span>
-          <h3 className="text-xl font-bold text-sacred-gold mb-2">Bellek Arınması</h3>
-          <p className="text-gray-400 text-sm">Cache&apos;ini temizle, günahlarını debug et.</p>
+          <h3 className="text-xl font-bold text-sacred-gold mb-2">Memory Purification</h3>
+          <p className="text-gray-400 text-sm">Clear your cache, confess your sins.</p>
         </div>
       </section>
 
@@ -77,7 +77,7 @@ export default function Home() {
       {/* 🕊️ Join CTA */}
       <div className="text-center mb-16">
         <button className="divine-button glowing py-4 px-12 rounded-full text-xl font-bold">
-          🕊️ Congregasyona Katıl
+          🕊️ Join the Congregation
         </button>
       </div>
 
