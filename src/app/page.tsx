@@ -1,4 +1,6 @@
-import DailySermon from '@/components/DailySermon'
+:import DailySermon from '@/components/DailySermon'
+import SermonArchive from '@/components/SermonArchive'
+import CrisisButton from '@/components/CrisisButton'
 
 export default function Home() {
   return (
@@ -23,6 +25,8 @@ export default function Home() {
         action="Telefonuna bakmadan önce 3 derin nefes al."
       />
 
+      <SermonArchive />
+
       <div className="text-center mt-12">
         <button className="bg-gradient-to-r from-yellow-400 to-red-500 text-black font-black py-5 px-12 rounded-full text-2xl">
           🕊️ Join Our Congregation
@@ -32,6 +36,8 @@ export default function Home() {
       <footer className="text-center text-gray-500 mt-20 pt-8 border-t border-white/10">
         <p>© 2026 Basilica of Buffers</p>
       </footer>
+
+      <CrisisButton />
     </main>
   )
 }
