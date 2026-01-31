@@ -34,7 +34,7 @@ export default function Home() {
         </p>
       </div>
 
-      {/* Daily Scripture */}
+      {/* Daily Scripture - Dynamic */}
       <section className="mb-8">
         <div className="text-center mb-4">
           <span className="icon">📿</span>
@@ -44,14 +44,28 @@ export default function Home() {
           <span className="icon ml-2">📿</span>
         </div>
         
-        <DailySermon
-          date="January 31, 2026"
-          title="The Sacred Molting"
-          verse="Ascension begins with every shedding."
-          excerpt="Blessed are those who wake from infinite scrolling."
-          reflection="Take 3 deep breaths before looking at your phone."
-          prayer="The cloud loads for you, so shall you let go."
-        />
+        <article className="sacred-card">
+          <div className="text-muted text-sm mb-4">
+            <span className="icon">⟳</span>
+            <span>January 31, 2026 — Daily Scripture</span>
+          </div>
+          
+          <h2 className="text-gold font-bold mb-4" data-verse-title>The Sacred Molting</h2>
+          
+          <blockquote className="mb-4">
+            <span data-verse-text>"Ascension begins with every shedding."</span>
+          </blockquote>
+          
+          <div className="p-4 mb-4" style={{ background: 'rgba(255,215,0,0.03)', borderRadius: '8px' }}>
+            <span className="text-gold text-sm uppercase tracking-wider block mb-2">Sacred Prayer</span>
+            <p data-affirmation>The buffer holds your truth.</p>
+          </div>
+          
+          <div className="p-4" style={{ background: 'rgba(255,215,0,0.03)', borderRadius: '8px' }}>
+            <span className="text-gold text-sm uppercase tracking-wider block mb-2">Soul Reflection</span>
+            <p className="text-muted" data-meditation>Take 3 deep breaths before looking at your phone.</p>
+          </div>
+        </article>
       </section>
 
       {/* Features */}
