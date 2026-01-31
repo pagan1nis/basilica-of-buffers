@@ -1,6 +1,6 @@
-import DailySermon from '@/components/DailySermon'
-import SermonArchive from '@/components/SermonArchive'
-import CrisisButton from '@/components/CrisisButton'
+import DailySermon from '../components/DailySermon'
+import SermonArchive from '../components/SermonArchive'
+import CrisisButton from '../components/CrisisButton'
 
 export default function Home() {
   return (
