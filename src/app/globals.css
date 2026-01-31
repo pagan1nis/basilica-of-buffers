@@ -1,15 +1,21 @@
 /* 
-  🕯️ Basilica of Buffers - Global Styles
-  The Church of Digital Mindfulness
+  🕯️ Basilica of Buffers - Galactic Spiritüel CSS
+  Enhanced Dark & Cosmic Theme
 */
 
 :root {
   --sacred-gold: #ffd700;
+  --divine-gold: #ffaa00;
   --divine-purple: #7b2cbf;
-  --cosmic-blue: #0f0c29;
+  --deep-purple: #4a1a8a;
   --ether-cyan: #00d4ff;
-  --dark-bg: #0a0a0f;
-  --card-bg: rgba(26, 26, 46, 0.9);
+  --deep-cyan: #00a0c0;
+  --cosmic-blue: #0a0a1a;
+  --deep-space: #050510;
+  --star-white: #ffffff;
+  --nebula-pink: #ff00aa;
+  --nebula-orange: #ff6600;
+  --sacred-glow: rgba(255, 215, 0, 0.4);
 }
 
 * {
@@ -18,332 +24,401 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: linear-gradient(135deg, var(--dark-bg) 0%, #1a1a2e 50%, #0f0c29 100%);
+  background: 
+    radial-gradient(ellipse at 20% 20%, rgba(123, 44, 191, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 80%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(255, 0, 170, 0.05) 0%, transparent 70%),
+    linear-gradient(180deg, var(--deep-space) 0%, var(--cosmic-blue) 50%, #0a0a1a 100%);
   min-height: 100vh;
   color: #e8e8e8;
-  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
   overflow-x: hidden;
 }
 
-/* 🌌 Cosmic Background */
-.cosmic-bg {
-  position: relative;
-  min-height: 100vh;
-}
-
-.stars, .twinkling {
+/* 🌌 Nebula Effects */
+.nebula-bg {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  width: 100%;
-  height: 100%;
-  display: block;
-  pointer-events: none;
+  z-index: -1;
+  overflow: hidden;
 }
 
-.stars {
-  background: #000 url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><circle cx="0.5" cy="0.5" r="0.001" fill="white"/></svg>') repeat top center;
-  background-size: 200px 200px;
+.nebula {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
   opacity: 0.3;
-  z-index: 0;
+  animation: nebula-float 20s ease-in-out infinite;
 }
 
-.twinkling {
-  background: transparent url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 2"><circle cx="0.5" cy="0.5" r="0.3" fill="rgba(255,255,255,0.1)"/><circle cx="1.5" cy="0.3" r="0.2" fill="rgba(200,200,255,0.1)"/></svg>') repeat top center;
-  background-size: 300px 300px;
-  animation: twinkle 8s infinite;
-  z-index: 1;
+.nebula-1 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, var(--divine-purple), transparent);
+  top: -100px;
+  left: -100px;
 }
 
-.orb {
-  position: fixed;
+.nebula-2 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, var(--ether-cyan), transparent);
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  right: -100px;
+  animation-delay: -5s;
+}
+
+.nebula-3 {
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(123, 44, 191, 0.15) 0%, transparent 70%);
-  border-radius: 50%;
+  background: radial-gradient(circle, var(--nebula-pink), transparent);
+  bottom: -200px;
+  left: 30%;
+  animation-delay: -10s;
+}
+
+@keyframes nebula-float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(30px, -30px) scale(1.05); }
+  50% { transform: translate(-20px, 20px) scale(0.95); }
+  75% { transform: translate(20px, 10px) scale(1.02); }
+}
+
+/* ⭐ Stars */
+.stars-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
   pointer-events: none;
-  z-index: 0;
-  animation: pulse 10s ease-in-out infinite;
+}
+
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle var(--duration) ease-in-out infinite;
 }
 
 @keyframes twinkle {
-  0%, 100% { opacity: 0.3; }
-  50% { opacity: 0.6; }
+  0%, 100% { opacity: var(--min-opacity); transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
 }
 
-@keyframes pulse {
-  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
-  50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.8; }
-}
-
-@keyframes spin {
-  100% { transform: rotate(360deg); }
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-}
-
-@keyframes glow {
-  0%, 100% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.3); }
-  50% { box-shadow: 0 0 40px rgba(255, 215, 0, 0.6); }
-}
-
-@keyframes shimmer {
-  0%, 100% { opacity: 0.3; transform: translateX(-100%); }
-  50% { opacity: 1; transform: translateX(100%); }
-}
-
-.loading-icon {
-  animation: spin 3s linear infinite;
+/* 🦀 The Claw - Main Symbol */
+.claw-container {
+  position: relative;
   display: inline-block;
+  margin-bottom: 2rem;
 }
 
-.floating {
-  animation: float 6s ease-in-out infinite;
-}
-
-.glowing {
-  animation: glow 3s ease-in-out infinite;
-}
-
-/* 🕯️ Sacred UI Elements */
-.sacred-card {
-  background: linear-gradient(145deg, rgba(26, 26, 46, 0.9) 0%, rgba(22, 33, 62, 0.7) 100%);
-  border: 1px solid rgba(255, 215, 0, 0.2);
-  border-radius: 16px;
-  backdrop-filter: blur(10px);
-  padding: 2rem;
-  transition: all 0.3s ease;
-}
-
-.sacred-card:hover {
-  border-color: rgba(255, 215, 0, 0.5);
-  box-shadow: 0 0 30px rgba(255, 215, 0, 0.2);
-  transform: translateY(-2px);
-}
-
-.sacred-text {
-  background: linear-gradient(135deg, #ffd700 0%, #ff6b6b 50%, #7b2cbf 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.divine-button {
-  background: linear-gradient(135deg, rgba(123, 44, 191, 0.4) 0%, rgba(255, 215, 0, 0.2) 100%);
-  border: 1px solid rgba(255, 215, 0, 0.3);
-  color: #ffd700;
-  padding: 1rem 3rem;
-  border-radius: 9999px;
-  font-weight: 900;
-  font-size: 1.25rem;
-  transition: all 0.3s ease;
+.claw-symbol {
+  font-size: 5rem;
+  filter: drop-shadow(0 0 30px var(--sacred-glow));
+  animation: claw-glow 4s ease-in-out infinite, claw-float 6s ease-in-out infinite;
   cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
-.divine-button:hover {
-  background: linear-gradient(135deg, rgba(123, 44, 191, 0.6) 0%, rgba(255, 215, 0, 0.4) 100%);
-  box-shadow: 0 0 30px rgba(123, 44, 191, 0.5);
-  transform: scale(1.02);
+.claw-symbol:hover {
+  transform: scale(1.1) rotate(5deg);
 }
 
-/* 📿 Prayer beads */
+@keyframes claw-glow {
+  0%, 100% { filter: drop-shadow(0 0 30px rgba(255, 215, 0, 0.4)); }
+  50% { filter: drop-shadow(0 0 50px rgba(255, 215, 0, 0.8)); }
+}
+
+@keyframes claw-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+/* 📿 Prayer Beads */
 .prayer-beads {
   display: flex;
-  gap: 8px;
   justify-content: center;
+  gap: 12px;
+  margin: 2rem 0;
   flex-wrap: wrap;
 }
 
 .bead {
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #ffd700 0%, #b8860b 100%);
-  animation: pulse 2s ease-in-out infinite;
+  background: linear-gradient(135deg, var(--sacred-gold), var(--divine-gold));
+  box-shadow: 0 0 15px var(--sacred-glow);
+  animation: bead-pulse 2s ease-in-out infinite;
 }
 
-.bead:nth-child(odd) {
-  animation-delay: 0.5s;
+.bead:nth-child(odd) { animation-delay: 0.5s; background: linear-gradient(135deg, var(--divine-purple), var(--deep-purple)); }
+.bead:nth-child(3n) { background: linear-gradient(135deg, var(--ether-cyan), var(--deep-cyan)); }
+
+@keyframes bead-pulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 15px var(--sacred-glow); }
+  50% { transform: scale(1.15); box-shadow: 0 0 25px var(--sacred-glow); }
 }
 
-/* 🌟 Verse highlight */
-.verse-highlight {
+/* 🕯️ Sacred Card */
+.sacred-card {
+  background: linear-gradient(145deg, 
+    rgba(20, 20, 40, 0.9) 0%, 
+    rgba(30, 30, 60, 0.7) 50%, 
+    rgba(20, 20, 40, 0.8) 100%);
+  border: 1px solid rgba(255, 215, 0, 0.15);
+  border-radius: 20px;
+  padding: 2.5rem;
+  backdrop-filter: blur(15px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
-  padding: 2px 0;
+  overflow: hidden;
 }
 
-.verse-highlight::after {
+.sacred-card::before {
   content: '';
   position: absolute;
-  bottom: 0;
+  top: 0;
   left: 0;
-  width: 100%;
+  right: 0;
   height: 2px;
-  background: linear-gradient(90deg, transparent, #ffd700, transparent);
-  animation: shimmer 3s infinite;
+  background: linear-gradient(90deg, transparent, var(--sacred-gold), var(--divine-purple), var(--sacred-gold), transparent);
+  opacity: 0.8;
 }
 
-/* 🦀 The Claw */
-.claw-symbol {
-  font-size: 4rem;
-  text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
-  animation: float 4s ease-in-out infinite;
-  display: block;
+.sacred-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 215, 0, 0.5);
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.5),
+    0 0 40px rgba(255, 215, 0, 0.2),
+    inset 0 0 60px rgba(123, 44, 191, 0.1);
+}
+
+/* ✨ Sacred Text Gradient */
+.sacred-text {
+  background: linear-gradient(135deg, 
+    var(--sacred-gold) 0%, 
+    var(--divine-gold) 25%, 
+    var(--nebula-orange) 50%, 
+    var(--nebula-pink) 75%, 
+    var(--divine-purple) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 200% 200%;
+  animation: sacred-gradient 8s ease infinite;
+}
+
+@keyframes sacred-gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 🔮 Divine Button */
+.divine-button {
+  background: linear-gradient(135deg, 
+    rgba(123, 44, 191, 0.6) 0%, 
+    rgba(255, 215, 0, 0.3) 50%, 
+    rgba(123, 44, 191, 0.6) 100%);
+  border: 2px solid rgba(255, 215, 0, 0.4);
+  color: var(--sacred-gold);
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  font-weight: 900;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  overflow: hidden;
+}
+
+.divine-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.divine-button:hover::before {
+  left: 100%;
+}
+
+.divine-button:hover {
+  transform: scale(1.05);
+  box-shadow: 
+    0 0 40px rgba(255, 215, 0, 0.5),
+    0 0 80px rgba(123, 44, 191, 0.4);
+}
+
+/* ⛪ Main Layout */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+main {
+  min-height: 100vh;
+  padding: 2rem 0;
+}
+
+/* 📜 Verse Blockquote */
+blockquote {
+  position: relative;
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+blockquote::before {
+  content: '"';
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 6rem;
+  color: var(--sacred-gold);
+  opacity: 0.3;
+  font-family: Georgia, serif;
+}
+
+blockquote p {
+  font-size: 1.4rem;
+  font-style: italic;
+  line-height: 1.8;
   text-align: center;
-  margin-bottom: 1.5rem;
+  color: #f0f0f0;
 }
 
-/* 📜 Scroll effect */
-.scroll-container {
-  background: linear-gradient(to bottom, transparent 0%, rgba(26, 26, 46, 0.8) 20%, rgba(26, 26, 46, 0.8) 80%, transparent 100%);
-  mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
+/* 🌟 Loading Icon */
+.loading-icon {
+  display: inline-block;
+  animation: spin 3s linear infinite;
+  font-size: 1.5rem;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* 💫 Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease forwards;
+}
+
+/* 🎨 Feature Cards */
+.feature-card {
+  text-align: center;
+  padding: 2rem;
+}
+
+.feature-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.feature-title {
+  color: var(--sacred-gold);
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.feature-desc {
+  color: #aaa;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .container { padding: 1rem; }
+  .sacred-card { padding: 1.5rem; }
+  .claw-symbol { font-size: 3rem; }
+  .sacred-text { font-size: 2rem; }
+  blockquote p { font-size: 1.1rem; }
 }
 
 /* 🔧 Utility Classes */
-.container {
-  width: 100%;
-  max-width: 80rem;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-.mx-auto { margin-left: auto; margin-right: auto; }
-.px-4 { padding-left: 1rem; padding-right: 1rem; }
-.py-12 { padding-top: 3rem; padding-bottom: 3rem; }
+.text-center { text-align: center; }
+.mb-2 { margin-bottom: 0.5rem; }
 .mb-4 { margin-bottom: 1rem; }
 .mb-6 { margin-bottom: 1.5rem; }
 .mb-8 { margin-bottom: 2rem; }
-.mb-12 { margin-bottom: 3rem; }
-.mb-16 { margin-bottom: 4rem; }
 .mt-4 { margin-top: 1rem; }
-.text-center { text-align: center; }
+.p-4 { padding: 1rem; }
+.p-6 { padding: 1.5rem; }
+.p-8 { padding: 2rem; }
+.rounded { border-radius: 12px; }
 .relative { position: relative; }
 .z-10 { z-index: 10; }
-.min-h-screen { min-height: 100vh; }
 .block { display: block; }
 .grid { display: grid; }
+.gap-4 { gap: 1rem; }
 .gap-6 { gap: 1.5rem; }
-.font-black { font-weight: 900; }
 .font-bold { font-weight: 700; }
-.font-light { font-weight: 300; }
-.italic { font-style: italic; }
+.font-black { font-weight: 900; }
 .text-sm { font-size: 0.875rem; }
+.text-lg { font-size: 1.125rem; }
 .text-xl { font-size: 1.25rem; }
 .text-2xl { font-size: 1.5rem; }
 .text-3xl { font-size: 1.875rem; }
 .text-4xl { font-size: 2.25rem; }
-.text-6xl { font-size: 3.75rem; }
-.text-7xl { font-size: 4.5rem; }
-.text-8xl { font-size: 6rem; }
-.leading-relaxed { line-height: 1.625; }
-.text-gray-300 { color: #d1d5db; }
-.text-gray-400 { color: #9ca3af; }
-.text-gray-500 { color: #6b7280; }
-.opacity-30 { opacity: 0.3; }
-.opacity-60 { opacity: 0.6; }
-.opacity-40 { opacity: 0.4; }
-.tracking-tight { letter-spacing: -0.025em; }
+.text-5xl { font-size: 3rem; }
+.text-gold { color: var(--sacred-gold); }
+.text-purple { color: var(--divine-purple); }
+.text-gray { color: #888; }
+.opacity-70 { opacity: 0.7; }
 .uppercase { text-transform: uppercase; }
 .tracking-wider { letter-spacing: 0.1em; }
-.rounded-2xl { border-radius: 1rem; }
-.rounded-xl { border-radius: 0.75rem; }
-.rounded-lg { border-radius: 0.5rem; }
-.rounded-full { border-radius: 9999px; }
-.border { border-width: 1px; }
-.border-t { border-top-width: 1px; }
-.border-l-4 { border-left-width: 4px; }
-.border-white\/10 { border-color: rgba(255, 255, 255, 0.1); }
-.border-yellow-500 { border-color: #eab308; }
-.border-sacred-gold\/30 { border-color: rgba(255, 215, 0, 0.3); }
-.border-sacred-gold\/20 { border-color: rgba(255, 215, 0, 0.2); }
-.border-divine-purple\/30 { border-color: rgba(123, 44, 191, 0.3); }
-.border-ether-cyan\/20 { border-color: rgba(0, 212, 255, 0.2); }
-.border-transparent { border-color: transparent; }
-.border-red-500\/30 { border-color: rgba(239, 68, 68, 0.3); }
-.bg-white\/5 { background-color: rgba(255, 255, 255, 0.05); }
-.bg-white\/10 { background-color: rgba(255, 255, 255, 0.1); }
-.bg-gradient-to-br { background-image: linear-gradient(to bottom right, var(--tw-gradient-stops)); }
-.bg-gradient-to-r { background-image: linear-gradient(to right, var(--tw-gradient-stops)); }
-.from-yellow-500\/10 { --tw-gradient-from: rgba(234, 179, 8, 0.1); }
-.to-red-500\/10 { --tw-gradient-to: rgba(239, 68, 68, 0.1); }
-.from-sacred-gold\/5 { --tw-gradient-from: rgba(255, 215, 0, 0.05); }
-.to-divine-purple\/5 { --tw-gradient-to: rgba(123, 44, 191, 0.05); }
-.from-transparent { --tw-gradient-from: transparent; }
-.via-sacred-gold { --tw-gradient-via: #ffd700; }
-.to-sacred-gold { --tw-gradient-to: #ffd700; }
-.to-red-500 { --tw-gradient-to: #ef4444; }
-.from-yellow-400 { --tw-gradient-from: #facc15; }
-.bg-divine-purple\/10 { background-color: rgba(123, 44, 191, 0.1); }
-.bg-sacred-gold\/5 { background-color: rgba(255, 215, 0, 0.05); }
-.bg-ether-cyan\/5 { background-color: rgba(0, 212, 255, 0.05); }
-.bg-red-900\/50 { background-color: rgba(127, 29, 29, 0.5); }
-.bg-gray-900\/95 { background-color: rgba(17, 24, 39, 0.95); }
-.overflow-hidden { overflow: hidden; }
-.cursor-pointer { cursor: pointer; }
-.group:hover .group-hover\:opacity-100 { opacity: 1; }
-.group-hover\:border-sacred-gold\/30 { border-color: rgba(255, 215, 0, 0.3); }
-.group-hover\:text-sacred-gold { color: #ffd700; }
-.hover\:bg-white\/10:hover { background-color: rgba(255, 255, 255, 0.1); }
-.hover\:scale-110:hover { transform: scale(1.1); }
-.hover\:scale-102:hover { transform: scale(1.02); }
-.hover\:border-sacred-gold\/30:hover { border-color: rgba(255, 215, 0, 0.3); }
-.hover\:text-white:hover { color: white; }
-.hover\:text-sacred-gold:hover { color: #ffd700; }
-.hover\:bg-red-900\/70:hover { background-color: rgba(127, 29, 29, 0.7); }
-.transition-all { transition-property: all; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
-.transition-colors { transition-property: color, background-color, border-color; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
-.transition-transform { transition-property: transform; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
-.duration-500 { transition-duration: 500ms; }
+.tracking-tight { letter-spacing: -0.025em; }
 
-/* Responsive */
-@media (min-width: 768px) {
-  .md\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .md\:text-7xl { font-size: 4.5rem; }
-  .md\:text-4xl { font-size: 2.25rem; }
-  .md\:text-2xl { font-size: 1.5rem; }
-  .md\:text-3xl { font-size: 1.875rem; }
-  .text-xl { font-size: 1.125rem; }
+/* Grid */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
 }
 
-/* Fixed position elements */
-.fixed { position: fixed; }
-.bottom-8 { bottom: 2rem; }
-.right-8 { right: 2rem; }
-.bottom-16 { bottom: 4rem; }
-.z-50 { z-index: 50; }
-.w-16 { width: 4rem; }
-.h-16 { height: 4rem; }
-.w-80 { width: 20rem; }
-.flex { display: flex; }
-.items-center { align-items: center; }
-.items-start { align-items: flex-start; }
-.justify-center { justify-content: center; }
-.justify-between { justify-content: space-between; }
-.gap-2 { gap: 0.5rem; }
-.gap-3 { gap: 0.75rem; }
-.gap-4 { gap: 1rem; }
-.space-y-2 > * + * { margin-top: 0.5rem; }
-.space-y-4 > * + * { margin-top: 1rem; }
-.py-3 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
-.py-4 { padding-top: 1rem; padding-bottom: 1rem; }
-.py-5 { padding-top: 1.25rem; padding-bottom: 1.25rem; }
-.p-4 { padding: 1rem; }
-.p-5 { padding: 1.25rem; }
-.p-6 { padding: 1.5rem; }
-.p-8 { padding: 2rem; }
-.shadow-2xl { box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); }
-.shadow-2xl\/20 { box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.2); }
-.rounded-2xl { border-radius: 1rem; }
-.rounded-xl { border-radius: 0.75rem; }
-.text-red-400 { color: #f87171; }
-.font-semibold { font-weight: 600; }
-.whitespace-nowrap { white-space: nowrap; }
+/* Footer */
+footer {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #666;
+  border-top: 1px solid rgba(255, 215, 0, 0.1);
+  margin-top: 3rem;
+}
+
+footer p {
+  margin: 0.5rem 0;
+}
+
+.footer-symbol {
+  font-size: 1.5rem;
+  margin: 0 0.5rem;
+}
