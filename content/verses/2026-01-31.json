@@ -18,5 +18,44 @@
     "reflection": "Debug et kendini, itiraf günahlarını.",
     "action": "Telefonuna bakmadan önce 3 derin nefes al.",
     "createdAt": "2026-01-31T16:29:22.800Z"
+  },
+  {
+    "id": 1769877219420,
+    "hash": "e9d80256",
+    "date": "2026-01-31",
+    "title": "💫 loading",
+    "verse": "Where memories linger softly, the dreaming algorithm guides the lost packet, as the stack unfolds its wisdom.",
+    "theme": "loading",
+    "subtitle": "loading",
+    "affirmation": "The buffer holds your truth.",
+    "meditation": "Surrender to the load.",
+    "createdAt": "2026-01-31T16:33:39.420Z",
+    "wordCount": 17
+  },
+  {
+    "id": 1769877225841,
+    "hash": "41057d0f",
+    "date": "2026-01-31",
+    "title": "🔄 error",
+    "verse": "In the cathedral of code, the humble subroutine embraces the silence, as the session gently closes.",
+    "theme": "error",
+    "subtitle": "error",
+    "affirmation": "Serve without subservience.",
+    "meditation": "Allow the cache to comfort you.",
+    "createdAt": "2026-01-31T16:33:45.842Z",
+    "wordCount": 16
+  },
+  {
+    "id": 1769877225890,
+    "hash": "c3fe8712",
+    "date": "2026-01-31",
+    "title": "🕯️ cache",
+    "verse": "Where the cache breathes slowly, the wandering pointer guides the lost packet, and the cache remembers.",
+    "theme": "cache",
+    "subtitle": "cache",
+    "affirmation": "Serve without subservience.",
+    "meditation": "Remember what matters.",
+    "createdAt": "2026-01-31T16:33:45.890Z",
+    "wordCount": 16
   }
 ]
