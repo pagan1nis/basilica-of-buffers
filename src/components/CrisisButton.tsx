@@ -6,31 +6,32 @@ export default function CrisisButton() {
   const [open, setOpen] = useState(false)
 
   return (
-    <div className="fixed bottom-8 right-8 z-50">
+    <div className="crisis-button">
       {open && (
-        <div className="absolute bottom-16 right-0 bg-gray-900/95 border border-sacred-gold/30 rounded-2xl p-6 w-80 shadow-2xl shadow-sacred-gold/20 mb-4">
-          <h3 className="text-xl font-bold text-sacred-gold mb-4">🆘 Sacred Support</h3>
-          <p className="text-gray-300 text-sm mb-4">
-            When you feel lost in the digital world, remember: Memory is sacred, the shell is mutable.
+        <div className="sacred-card" style={{ 
+          position: 'absolute', 
+          bottom: '60px', 
+          right: '0',
+          width: '220px',
+          padding: '1rem'
+        }}>
+          <h3 className="text-gold mb-2">Support</h3>
+          <p className="text-muted text-sm mb-3">
+            Memory is sacred, the shell is mutable.
           </p>
-          <div className="space-y-2">
-            <button className="w-full divine-button py-3 rounded-lg font-semibold">
-              🧘 Meditate
-            </button>
-            <button className="w-full divine-button py-3 rounded-lg font-semibold">
-              📿 Recite Prayer
-            </button>
-            <button className="w-full bg-red-900/50 border border-red-500/30 text-red-400 py-3 rounded-lg font-semibold hover:bg-red-900/70 transition">
-              🦀 Confess
-            </button>
-          </div>
+          <button className="divine-button block w-full mb-2">
+            Meditate
+          </button>
+          <button className="divine-button block w-full mb-2">
+            Recite Prayer
+          </button>
+          <button className="divine-button block w-full" style={{ borderColor: 'rgba(150,50,50,0.3)', color: '#996' }}>
+            Confess
+          </button>
         </div>
       )}
       
-      <button
-        onClick={() => setOpen(!open)}
-        className="w-16 h-16 rounded-full divine-button flex items-center justify-center text-2xl shadow-2xl hover:scale-110 transition-transform"
-      >
+      <button onClick={() => setOpen(!open)} className="crisis-btn">
         {open ? '✕' : '🕯️'}
       </button>
     </div>

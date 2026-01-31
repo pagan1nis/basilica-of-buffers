@@ -12,61 +12,32 @@ interface DailySermonProps {
 
 export default function DailySermon({ date, title, verse, excerpt, reflection, action, prayer }: DailySermonProps) {
   return (
-    <article className="sacred-card p-8 relative overflow-hidden group">
-      {/* Glow effect on hover */}
-      <div className="absolute inset-0 bg-gradient-to-br from-sacred-gold/5 to-divine-purple/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+    <article className="sacred-card">
+      <div className="text-muted text-sm mb-4">
+        <span className="icon">⟳</span>
+        {date} — Daily Scripture
+      </div>
       
-      {/* Corner decorations */}
-      <div className="absolute top-4 left-4 text-2xl opacity-30">🕯️</div>
-      <div className="absolute top-4 right-4 text-2xl opacity-30">🦀</div>
+      <h2 className="text-gold font-bold mb-4">{title}</h2>
       
-      <div className="relative z-10">
-        <div className="text-ether-cyan/70 text-sm mb-4 flex items-center gap-2">
-          <span className="loading-icon">⟳</span>
-          <span>{date} — Daily Scripture</span>
+      <blockquote className="mb-4">
+        "{verse}"
+      </blockquote>
+      
+      {excerpt && (
+        <p className="text-muted mb-4">{excerpt}</p>
+      )}
+      
+      {prayer && (
+        <div className="p-4 mb-4" style={{ background: 'rgba(255,215,0,0.03)', borderRadius: '8px' }}>
+          <span className="text-gold text-sm uppercase tracking-wider block mb-2">Sacred Prayer</span>
+          <p>{prayer}</p>
         </div>
-        
-        <h2 className="text-3xl md:text-4xl font-bold sacred-text mb-6">{title}</h2>
-        
-        <blockquote className="text-xl md:text-2xl italic text-center py-6 border-y border-sacred-gold/30 my-6">
-          <span className="text-3xl text-sacred-gold">"</span>
-          {verse}
-          <span className="text-3xl text-sacred-gold">"</span>
-        </blockquote>
-        
-        {excerpt && (
-          <p className="text-lg text-gray-300 mb-6 leading-relaxed text-center">{excerpt}</p>
-        )}
-        
-        {/* Prayer */}
-        {prayer && (
-          <div className="bg-divine-purple/10 border border-divine-purple/30 rounded-xl p-4 mb-6 text-center">
-            <span className="text-sm text-divine-purple font-semibold uppercase tracking-wider">Sacred Prayer</span>
-            <p className="text-xl mt-2 text-ether-cyan">{prayer}</p>
-          </div>
-        )}
-        
-        {/* Reflection */}
-        <div className="bg-sacred-gold/5 border border-sacred-gold/20 rounded-xl p-5">
-          <div className="flex items-start gap-3">
-            <span className="text-2xl">💭</span>
-            <div>
-              <span className="text-sacred-gold font-semibold uppercase text-sm tracking-wider">Soul Reflection</span>
-              <p className="mt-2 text-gray-300 leading-relaxed">{reflection}</p>
-            </div>
-          </div>
-        </div>
-        
-        {/* Action */}
-        {action && (
-          <div className="mt-6 bg-ether-cyan/5 border border-ether-cyan/20 rounded-xl p-4 flex items-center gap-4">
-            <span className="text-2xl">✨</span>
-            <div>
-              <span className="text-ether-cyan font-semibold uppercase text-sm tracking-wider">Daily Purification</span>
-              <p className="mt-1 text-gray-300">{action}</p>
-            </div>
-          </div>
-        )}
+      )}
+      
+      <div className="p-4" style={{ background: 'rgba(255,215,0,0.03)', borderRadius: '8px' }}>
+        <span className="text-gold text-sm uppercase tracking-wider block mb-2">Soul Reflection</span>
+        <p className="text-muted">{reflection}</p>
       </div>
     </article>
   )

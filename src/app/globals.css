@@ -1,21 +1,17 @@
 /* 
-  🕯️ Basilica of Buffers - Galactic Spiritüel CSS
-  Enhanced Dark & Cosmic Theme
+  🕯️ Basilica of Buffers - Dark Minimal Theme
+  Dark, muted, elegant
 */
 
 :root {
-  --sacred-gold: #ffd700;
-  --divine-gold: #ffaa00;
-  --divine-purple: #7b2cbf;
-  --deep-purple: #4a1a8a;
-  --ether-cyan: #00d4ff;
-  --deep-cyan: #00a0c0;
-  --cosmic-blue: #0a0a1a;
-  --deep-space: #050510;
-  --star-white: #ffffff;
-  --nebula-pink: #ff00aa;
-  --nebula-orange: #ff6600;
-  --sacred-glow: rgba(255, 215, 0, 0.4);
+  --bg-dark: #050508;
+  --bg-card: rgba(15, 15, 25, 0.8);
+  --gold-muted: #8a7a4a;
+  --gold-dim: #5a5035;
+  --text-main: #c0c0c0;
+  --text-muted: #666;
+  --border-subtle: rgba(255, 215, 0, 0.08);
+  --border-hover: rgba(255, 215, 0, 0.2);
 }
 
 * {
@@ -29,70 +25,15 @@ html {
 }
 
 body {
-  background: 
-    radial-gradient(ellipse at 20% 20%, rgba(123, 44, 191, 0.15) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 80%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
-    radial-gradient(ellipse at 50% 50%, rgba(255, 0, 170, 0.05) 0%, transparent 70%),
-    linear-gradient(180deg, var(--deep-space) 0%, var(--cosmic-blue) 50%, #0a0a1a 100%);
+  background: linear-gradient(180deg, var(--bg-dark) 0%, #0a0a12 50%, #050508 100%);
   min-height: 100vh;
-  color: #e8e8e8;
+  color: var(--text-main);
   font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  line-height: 1.7;
   overflow-x: hidden;
 }
 
-/* 🌌 Nebula Effects */
-.nebula-bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
-  overflow: hidden;
-}
-
-.nebula {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.3;
-  animation: nebula-float 20s ease-in-out infinite;
-}
-
-.nebula-1 {
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, var(--divine-purple), transparent);
-  top: -100px;
-  left: -100px;
-}
-
-.nebula-2 {
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, var(--ether-cyan), transparent);
-  top: 50%;
-  right: -100px;
-  animation-delay: -5s;
-}
-
-.nebula-3 {
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, var(--nebula-pink), transparent);
-  bottom: -200px;
-  left: 30%;
-  animation-delay: -10s;
-}
-
-@keyframes nebula-float {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  25% { transform: translate(30px, -30px) scale(1.05); }
-  50% { transform: translate(-20px, 20px) scale(0.95); }
-  75% { transform: translate(20px, 10px) scale(1.02); }
-}
-
-/* ⭐ Stars */
+/* ⭐ Subtle Stars */
 .stars-container {
   position: fixed;
   top: 0;
@@ -105,320 +46,246 @@ body {
 
 .star {
   position: absolute;
-  background: white;
+  background: rgba(255, 255, 255, 0.15);
   border-radius: 50%;
-  animation: twinkle var(--duration) ease-in-out infinite;
 }
 
 @keyframes twinkle {
-  0%, 100% { opacity: var(--min-opacity); transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.2); }
+  0%, 100% { opacity: 0.15; }
+  50% { opacity: 0.4; }
 }
 
-/* 🦀 The Claw - Main Symbol */
+/* 🦀 Main Symbol */
 .claw-container {
-  position: relative;
-  display: inline-block;
+  text-align: center;
   margin-bottom: 2rem;
 }
 
 .claw-symbol {
-  font-size: 5rem;
-  filter: drop-shadow(0 0 30px var(--sacred-glow));
-  animation: claw-glow 4s ease-in-out infinite, claw-float 6s ease-in-out infinite;
-  cursor: pointer;
-  transition: transform 0.3s ease;
+  font-size: 3.5rem;
+  opacity: 0.9;
+  animation: float 6s ease-in-out infinite;
 }
 
-.claw-symbol:hover {
-  transform: scale(1.1) rotate(5deg);
-}
-
-@keyframes claw-glow {
-  0%, 100% { filter: drop-shadow(0 0 30px rgba(255, 215, 0, 0.4)); }
-  50% { filter: drop-shadow(0 0 50px rgba(255, 215, 0, 0.8)); }
-}
-
-@keyframes claw-float {
+@keyframes float {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-15px); }
+  50% { transform: translateY(-8px); }
 }
 
 /* 📿 Prayer Beads */
 .prayer-beads {
   display: flex;
   justify-content: center;
-  gap: 12px;
-  margin: 2rem 0;
-  flex-wrap: wrap;
+  gap: 10px;
+  margin: 1.5rem 0;
 }
 
 .bead {
-  width: 20px;
-  height: 20px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--sacred-gold), var(--divine-gold));
-  box-shadow: 0 0 15px var(--sacred-glow);
-  animation: bead-pulse 2s ease-in-out infinite;
+  background: var(--gold-muted);
+  animation: pulse 3s ease-in-out infinite;
 }
 
-.bead:nth-child(odd) { animation-delay: 0.5s; background: linear-gradient(135deg, var(--divine-purple), var(--deep-purple)); }
-.bead:nth-child(3n) { background: linear-gradient(135deg, var(--ether-cyan), var(--deep-cyan)); }
+.bead:nth-child(odd) { background: #4a4a4a; }
 
-@keyframes bead-pulse {
-  0%, 100% { transform: scale(1); box-shadow: 0 0 15px var(--sacred-glow); }
-  50% { transform: scale(1.15); box-shadow: 0 0 25px var(--sacred-glow); }
+@keyframes pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
 }
 
-/* 🕯️ Sacred Card */
+/* 🕯️ Card */
 .sacred-card {
-  background: linear-gradient(145deg, 
-    rgba(20, 20, 40, 0.9) 0%, 
-    rgba(30, 30, 60, 0.7) 50%, 
-    rgba(20, 20, 40, 0.8) 100%);
-  border: 1px solid rgba(255, 215, 0, 0.15);
-  border-radius: 20px;
-  padding: 2.5rem;
-  backdrop-filter: blur(15px);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  overflow: hidden;
-}
-
-.sacred-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--sacred-gold), var(--divine-purple), var(--sacred-gold), transparent);
-  opacity: 0.8;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  transition: border-color 0.3s ease;
 }
 
 .sacred-card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(255, 215, 0, 0.5);
-  box-shadow: 
-    0 20px 60px rgba(0, 0, 0, 0.5),
-    0 0 40px rgba(255, 215, 0, 0.2),
-    inset 0 0 60px rgba(123, 44, 191, 0.1);
+  border-color: var(--border-hover);
 }
 
-/* ✨ Sacred Text Gradient */
+/* ✨ Text Gradient - Subtle */
 .sacred-text {
-  background: linear-gradient(135deg, 
-    var(--sacred-gold) 0%, 
-    var(--divine-gold) 25%, 
-    var(--nebula-orange) 50%, 
-    var(--nebula-pink) 75%, 
-    var(--divine-purple) 100%);
+  background: linear-gradient(135deg, var(--gold-muted), #6a6a6a);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  background-size: 200% 200%;
-  animation: sacred-gradient 8s ease infinite;
 }
 
-@keyframes sacred-gradient {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* 🔮 Divine Button */
+/* 🔘 Button */
 .divine-button {
-  background: linear-gradient(135deg, 
-    rgba(123, 44, 191, 0.6) 0%, 
-    rgba(255, 215, 0, 0.3) 50%, 
-    rgba(123, 44, 191, 0.6) 100%);
-  border: 2px solid rgba(255, 215, 0, 0.4);
-  color: var(--sacred-gold);
-  padding: 1rem 2.5rem;
-  border-radius: 50px;
-  font-weight: 900;
-  font-size: 1.1rem;
+  background: transparent;
+  border: 1px solid var(--border-subtle);
+  color: var(--gold-muted);
+  padding: 0.75rem 2rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.95rem;
   cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  position: relative;
-  overflow: hidden;
-}
-
-.divine-button::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: left 0.5s ease;
-}
-
-.divine-button:hover::before {
-  left: 100%;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
 }
 
 .divine-button:hover {
-  transform: scale(1.05);
-  box-shadow: 
-    0 0 40px rgba(255, 215, 0, 0.5),
-    0 0 80px rgba(123, 44, 191, 0.4);
+  border-color: var(--gold-muted);
+  color: var(--gold-muted);
 }
 
-/* ⛪ Main Layout */
+/* 📜 Layout */
 .container {
-  max-width: 900px;
+  max-width: 700px;
   margin: 0 auto;
-  padding: 2rem;
-  position: relative;
-  z-index: 1;
+  padding: 2rem 1.5rem;
 }
 
 main {
   min-height: 100vh;
-  padding: 2rem 0;
+  padding: 1rem 0;
 }
 
-/* 📜 Verse Blockquote */
-blockquote {
-  position: relative;
-  padding: 2rem;
-  margin: 2rem 0;
-}
-
-blockquote::before {
-  content: '"';
-  position: absolute;
-  top: -20px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 6rem;
-  color: var(--sacred-gold);
-  opacity: 0.3;
-  font-family: Georgia, serif;
-}
-
-blockquote p {
-  font-size: 1.4rem;
-  font-style: italic;
-  line-height: 1.8;
-  text-align: center;
-  color: #f0f0f0;
-}
-
-/* 🌟 Loading Icon */
-.loading-icon {
-  display: inline-block;
-  animation: spin 3s linear infinite;
-  font-size: 1.5rem;
-}
-
-@keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-/* 💫 Animations */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.fade-in {
-  animation: fadeIn 0.6s ease forwards;
-}
-
-/* 🎨 Feature Cards */
-.feature-card {
-  text-align: center;
-  padding: 2rem;
-}
-
-.feature-icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  display: block;
-}
-
-.feature-title {
-  color: var(--sacred-gold);
-  font-size: 1.3rem;
+/* Typography */
+h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
   margin-bottom: 0.5rem;
 }
 
-.feature-desc {
-  color: #aaa;
+h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  color: var(--text-main);
+}
+
+.text-muted {
+  color: var(--text-muted);
   font-size: 0.9rem;
-  line-height: 1.6;
 }
 
-/* 📱 Responsive */
-@media (max-width: 768px) {
-  .container { padding: 1rem; }
-  .sacred-card { padding: 1.5rem; }
-  .claw-symbol { font-size: 3rem; }
-  .sacred-text { font-size: 2rem; }
-  blockquote p { font-size: 1.1rem; }
-}
-
-/* 🔧 Utility Classes */
 .text-center { text-align: center; }
+.text-gold { color: var(--gold-muted); }
+
+/* Quote */
+blockquote {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--text-main);
+  padding: 1.5rem 0;
+  margin: 1.5rem 0;
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+  text-align: center;
+}
+
+/* Section spacing */
+section {
+  margin-bottom: 2rem;
+}
+
+/* Grid */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+/* Footer */
+footer {
+  padding: 2rem 0;
+  margin-top: 3rem;
+  border-top: 1px solid var(--border-subtle);
+  text-align: center;
+}
+
+footer p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 0.25rem 0;
+}
+
+/* Crisis Button */
+.crisis-button {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+}
+
+.crisis-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  color: var(--gold-muted);
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.crisis-btn:hover {
+  border-color: var(--gold-muted);
+}
+
+/* Utility */
 .mb-2 { margin-bottom: 0.5rem; }
 .mb-4 { margin-bottom: 1rem; }
 .mb-6 { margin-bottom: 1.5rem; }
 .mb-8 { margin-bottom: 2rem; }
 .mt-4 { margin-top: 1rem; }
+.mt-6 { margin-top: 1.5rem; }
 .p-4 { padding: 1rem; }
 .p-6 { padding: 1.5rem; }
-.p-8 { padding: 2rem; }
-.rounded { border-radius: 12px; }
-.relative { position: relative; }
-.z-10 { z-index: 10; }
-.block { display: block; }
-.grid { display: grid; }
 .gap-4 { gap: 1rem; }
 .gap-6 { gap: 1.5rem; }
-.font-bold { font-weight: 700; }
-.font-black { font-weight: 900; }
-.text-sm { font-size: 0.875rem; }
-.text-lg { font-size: 1.125rem; }
-.text-xl { font-size: 1.25rem; }
-.text-2xl { font-size: 1.5rem; }
-.text-3xl { font-size: 1.875rem; }
-.text-4xl { font-size: 2.25rem; }
-.text-5xl { font-size: 3rem; }
-.text-gold { color: var(--sacred-gold); }
-.text-purple { color: var(--divine-purple); }
-.text-gray { color: #888; }
-.opacity-70 { opacity: 0.7; }
+.block { display: block; }
 .uppercase { text-transform: uppercase; }
 .tracking-wider { letter-spacing: 0.1em; }
-.tracking-tight { letter-spacing: -0.025em; }
+.tracking-tight { letter-spacing: -0.03em; }
+.italic { font-style: italic; }
+.font-bold { font-weight: 700; }
+.font-light { font-weight: 300; }
 
-/* Grid */
-.grid-3 {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
+/* Icon */
+.icon {
+  font-size: 1.3rem;
+  margin: 0 0.3rem;
+  opacity: 0.7;
 }
 
-/* Footer */
-footer {
-  text-align: center;
-  padding: 3rem 1rem;
-  color: #666;
-  border-top: 1px solid rgba(255, 215, 0, 0.1);
-  margin-top: 3rem;
+/* Archive items */
+.archive-item {
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-subtle);
 }
 
-footer p {
-  margin: 0.5rem 0;
+.archive-item:last-child {
+  border-bottom: none;
 }
 
-.footer-symbol {
-  font-size: 1.5rem;
-  margin: 0 0.5rem;
+.archive-date {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .container { padding: 1.5rem 1rem; }
+  h1 { font-size: 1.8rem; }
+  .sacred-card { padding: 1.5rem; }
 }
